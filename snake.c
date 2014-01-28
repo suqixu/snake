@@ -294,6 +294,8 @@ void add_snake_node ( Snake_t *snake , Node_t * food)
 
     snake->head->p = tp;
     snake->length++;
+    
+    free(food);
 }
 
 int is_collision(SDL_Rect box1, SDL_Rect box2)
@@ -402,7 +404,6 @@ int main ( int argc, char *argv[] )
     }
 
     free(snake);
-    free(food);
     SDL_Quit();
 
     return 0;
